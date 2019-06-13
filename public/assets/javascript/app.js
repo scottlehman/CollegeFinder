@@ -163,7 +163,7 @@ $("#search").on("click", function(collegeINFO){
       event.preventDefault();
 
       var data = JSON.parse($("#cardResult").attr('data-college-data'));
-      console.log(data);
+      // console.log(data);
       
       var newCollegeinfo = {
         
@@ -179,9 +179,9 @@ $("#search").on("click", function(collegeINFO){
         // income: newIncome,
       };
 
-      console.log(data.newCollege);
+      // console.log(data.newCollege);
       
-      $("#savedCollegeName").html(data.newCollege);
+      $("#savedCollegeName").html(`<a href=${data.lowerCaseURL}>${data.newCollege}</a>`);
       // push's new info to database
 
       database.ref().push(newCollegeinfo);
